@@ -1,8 +1,17 @@
-
 docker build \
-  --build-arg "OPENCLAW_DOCKER_APT_PACKAGES=${OPENCLAW_DOCKER_APT_PACKAGES:-}" \
+ --build-arg "OPENCLAW_DOCKER_APT_PACKAGES=${OPENCLAW_DOCKER_APT_PACKAGES:-}" \
   --build-arg "OPENCLAW_EXTENSIONS=${OPENCLAW_EXTENSIONS:-}" \
-  --build-arg "OPENCLAW_INSTALL_DOCKER_CLI=1" \
-  -t openclaw:unified \
-  -f "$(pwd)/Dockerfile" \
+ --build-arg "OPENCLAW_INSTALL_DOCKER_CLI=1" \
+ -t openclaw:unified \
+ -f "$(pwd)/Dockerfile" \
   "$(pwd)"
+
+openclaw config set gateway.http.endpoints.chatCompletions.enabled true
+
+sk-d222b24ad7964f7dae1ebbbd865fe7e7
+
+export OPENAI_API_KEY=sk-14a86f99a3fd4cceab3dcd7589b44ae8
+export OPENAI_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
+export OPENAI_MODEL=qwen-plus
+
+./mysetup.sh user1 dinglpsugepxifxh60hm yf0oCrLlA125jwodu7xOkMlZBhXQpvedpwukvvGlIEFrQSbRV5V6eBIxWB1IlGfT
