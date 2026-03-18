@@ -1,0 +1,8 @@
+
+docker build \
+  --build-arg "OPENCLAW_DOCKER_APT_PACKAGES=${OPENCLAW_DOCKER_APT_PACKAGES:-}" \
+  --build-arg "OPENCLAW_EXTENSIONS=${OPENCLAW_EXTENSIONS:-}" \
+  --build-arg "OPENCLAW_INSTALL_DOCKER_CLI=1" \
+  -t openclaw:unified \
+  -f "$(pwd)/Dockerfile" \
+  "$(pwd)"
